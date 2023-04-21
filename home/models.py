@@ -15,8 +15,9 @@ class Contact(models.Model):
     desc = models.TextField()
     operator = models.CharField(max_length=15, choices=operator_choice)
     date = models.DateField()
+    photo = models.ImageField(upload_to='contact/images', null=True, blank=True)
 
-    def __init__(self):
+    def __str__(self):
         return self.name
         
 
